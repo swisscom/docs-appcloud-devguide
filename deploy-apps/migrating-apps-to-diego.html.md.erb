@@ -1,0 +1,92 @@
+---
+title: Migrating Apps to Diego
+---
+
+This topic contains instructions for migrating apps originally deployed on the DEA architecture to the newer Diego architecture.
+
+## Deploy a new app to Diego
+
+New apps are automatically deployed to Diego.
+
+## Install Diego CLI plugin
+
+Use the Cloud Foundry Command Line Interface (CF CLI) to install the Diego-Enabler plugin.
+
+<pre class="terminal">
+$ cf add-plugin-repo CF-Community http://plugins.cloudfoundry.org/
+$ cf install-plugin Diego-Enabler -r CF-Community
+</pre>
+
+## Migrate an existing app to Diego without downtime
+
+1. Push your application to the Swisscom Application Cloud with a new name and the route for your application. Do not use the name of the existing application.
+
+<pre class="terminal">
+$ cf push --no-start NEW-APP -d MY-DOMAIN.COM -n MY-SUBDOMAIN
+$ cf enable-diego NEW-APP
+$ cf start NEW-APP
+</pre>
+
+<p class="note"><strong>Note:</strong>The currently deployed application and the application you are pushing must be the same version. Otherwise, any static assets served from your application, like CSS and Javascript, will not be consistent across both apps. Now is not the time to upgrade your app.</p>
+
+2. Confirm that `NEW-APP` runs properly.
+
+<pre class="terminal">
+$ cf app NEW-APP
+</pre>
+
+3. Run `has-diego-enabled` to confirm that the application is running on the Diego architecture.
+
+<pre class="terminal">
+$ cf has-diego-enabled NEW-APP
+</pre>
+
+4. Map the route for your application running on the DEA architecture to `NEW-APP`. This remapping creates a second route that splits your traffic between the DEA and Diego architectures.
+
+<pre class="terminal">
+$ cf map-route NEW-APP MY-DOMAIN.COM -n MY-SUBDOMAIN
+</pre>
+
+5. Unmap the route from the application running on the DEA architecture. This action sends all of the traffic to the application that is running on Diego.
+
+<pre class="terminal">
+$ cf unmap-route OLD-APP MY-DOMAIN.COM -n MY-SUBDOMAIN
+</pre>
+
+6. Stop `OLD-APP` to route all traffic to `NEW-APP` and complete the blue-green migration.
+
+<pre class="terminal">
+$ cf stop OLD-APP
+</pre>
+
+<p class="note"><strong>Note:</strong>Verify that your application is still accessible and runs properly. If there is a problem with your app, do not complete this procedure. Instead, proceed to the Application Rollback procedure below.</p>
+
+7. Delete the old application.
+
+<pre class="terminal">
+$ cf delete OLD-APP
+</pre>
+
+## Application Rollback Procedure
+
+If necessary, complete this procedure to revert your application to the DEA architecture.
+
+<p class="note"><strong>Note:</strong>This procedure only works if you have not deleted your application that runs on the DEA architecture.</p>
+
+1. Start your app using the pre-migration name.
+
+<pre class="terminal">
+$ cf start OLD-APP
+</pre>
+
+2. Map `OLD-APP` to your domain.
+
+<pre class="terminal">
+$ cf map-route OLD-APP MY-DOMAIN.COM -n MY-SUBDOMAIN
+</pre>
+
+3. Unmap the app running on the Diego architecture from your domain.
+
+<pre class="terminal">
+$ cf unmap-route NEW-APP MY-DOMAIN.COM -n MY-SUBDOMAIN
+</pre>
