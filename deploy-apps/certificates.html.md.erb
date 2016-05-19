@@ -1,5 +1,45 @@
 ---
-title: Certificates
+title: SSL Certificates
 ---
 
-## Create a certificate
+<strong><%= modified_date %></strong>
+
+## <a id='overview'></a> Overview
+
+Writing web applications, you will probably require SSL (i.e. HTTPS) to secure traffic between the user's browser and your app's server. Here are some important reasons why:
+
+* You want to prevent sensitive data like user credentials or credit card numbers from being intercepted by a third party
+* You want your users to see that their browser is indeed talking to a legitimate server of your app
+* You want your app's site to be ranked well with search engines
+* You might be treating financial or medical data in your app for which regulations require SSL and other security measures
+
+<%=vars.product_short%> offers a fully automated way to do that. Our Web Console allows you to create, install, uninstall and revoke SSL certificates for your apps with just a few clicks and without ever leaving your browser. The renewal of certificats is handled automatically by <%=vars.product_short%>.
+
+## <a id='creating'></a> Creating a certificate
+
+1. First you need to create a CNAME record with the nameserver responsible for your domain. The CNAME record defines a new subdomain for your app and points to the app running in <%=vars.product_long%>. This step links your subdomain to <%=vars.product_long%> and proves that the subdomain is intended to be handled by <%=vars.product_short%>.
+1. Then you create a domain in Cloud Foundry. You can do that from the Organization's page in the Web Console.
+1. As a next step, you have to create and map the respective route in Cloud Foundry. You can do that from the Space's page in the Web Console.</p>
+1. The last step is to actually create the certificae by clicking on the route in the routes sidebar and clicking the lock icon. Then follow the wizard and hit "Create". This will trigger the creation of an SSL certificate for your route.
+
+As a result your app's routes should now open it using HTTPS by default and if you look at your route in the routes sidebar, it will be presented with a green lock indicating that it's a secure route.
+
+![Secure Routes](../images/secure-routes.png)
+
+## <a id='installing'></a> Installing / Uninstalling a certificate
+
+In the Developer Console we also offer the possibility to install and uninstall certificates in order to switch SSL on and off on a route:
+
+1. Select a particular certificate an click on the power button. This toggles the certificate between an installed and an uninstalled state.
+
+When you uninstall a certificate, it is removed from the load balancer but kept in the database for later reinstallation.
+
+## <a id='revoking'></a> Revoking a certificate
+
+In case you ever run into reasons to revoke an SSL certificate, we also support this in an automated way:
+
+1. Select the certificate which you want to revoke and click on the trash can button. After a short while you will see your certificate listed as "Revoked" in the routes sidebar
+
+## <a id='renewal'></a> Certificate Renewal
+
+When your certificate is reaching its expiration date, <%=vars.product_short%> automatically triggers a renewal with Let's Encrypt. This will renew your certificate without requiring any interaction on your part.
