@@ -1,0 +1,29 @@
+---
+title: Service Backup and Restore
+owner: Services
+---
+
+<strong><%= modified_date %></strong>
+
+In the <%= vars.product_short %> Developer Console, you can manually trigger and restore Backups of your Services.
+
+## <a id='create'></a> Create Backup
+
+To create a Backup, navigate to the Service instance in the Developer Console and then to the "Backups" tab. There you can click the create button to trigger a manual Backup.
+
+<p class="note">
+  <strong>Note</strong>: Backups have to be triggered manually from the Developer Console.
+</p>
+
+Be aware that you can only keep a set number of Backups per Service instance. The actual number is dependent on the Service type and Service plan. In case you already have the maximum number, you cannot create any new Backups before deleting one of the existing.
+
+It may take several minutes to backup your Service (depending on the size of your Service instance).
+
+## <a id='restore'></a> Restore Backup
+
+You can restore any Backup at any time. The current state of your Backup will be *overwritten and replaced* with the state saved to the Backup. You are advised to create a Backup of the current state before restoring an old state.
+
+## <a id='limitations'></a> Limitations
+
+* You can only perform one Backup or Restore action per Service instance at a time. If an action is still ongoing, you cannot trigger another one.
+* You cannot exceed the maxmimum number of Backups per Service instance
