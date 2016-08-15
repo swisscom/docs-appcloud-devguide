@@ -5,25 +5,25 @@ owner: Services
 
 <strong><%= modified_date %></strong>
 
-In the <%= vars.product_short %> Developer Console, you can manually trigger and restore Backups of your Services.
+In the <%= vars.product_short %> web console, you can manually trigger and restore backups of your services.
 
 ## <a id='create'></a> Create Backup
 
-To create a Backup, navigate to the Service instance in the Developer Console and then to the "Backups" tab. There you can click the create button to trigger a manual Backup.
+To create a backup, navigate to the service instance in the web console and then to the "Backups" tab. There you can click the "Create" button to trigger a manual backup.
 
 <p class="note">
-  <strong>Note</strong>: Backups have to be triggered manually from the Developer Console.
+  <strong>Note</strong>: Backups have to be triggered manually from the web console.
 </p>
 
-Be aware that you can only keep a set number of Backups per Service instance. The actual number is dependent on the Service type and Service plan. In case you already have the maximum number, you cannot create any new Backups before deleting one of the existing.
+Be aware that you can only keep a set number of backups per service instance. The actual number is dependent on the service type and service plan. In case you already have the maximum number, you cannot create any new backups before deleting one of the existing.
 
-It may take several minutes to backup your Service (depending on the size of your Service instance).
+It may take several minutes to backup your service (depending on the size of your service instance).
 
 ## <a id='restore'></a> Restore Backup
 
-You can restore any Backup at any time. The current state of your Backup will be *overwritten and replaced* with the state saved to the Backup. You are advised to create a Backup of the current state before restoring an old state.
+You can restore any backup at any time. The current state of your backup will be *overwritten and replaced* with the state saved to the backup. You are advised to create a backup of the current state before restoring an old state.
 
 ## <a id='limitations'></a> Limitations
 
-* You can only perform one Backup or Restore action per Service instance at a time. If an action is still ongoing, you cannot trigger another one.
-* You cannot exceed the maxmimum number of Backups per Service instance
+* You can only perform one backup or restore action per service instance at a time. If an action is still ongoing, you cannot trigger another one.
+* You cannot exceed the maxmimum number of backups per service instance
