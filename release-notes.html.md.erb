@@ -1,0 +1,222 @@
+---
+title: SSL Secure Routes (SSL Server Certificates)
+---
+
+<strong><%= modified_date %></strong>
+
+## <a id='4.0.11'></a> APC 4.0.11
+
+### Billing and Portal
+
+#### New billing capabilities
+
+We have included a new minor version of our billing component. This version represents the technical foundation for a number of billing improvements which will follow in later releases. Prominent among these is a temporally more fine grained way of billing running apps and services.
+
+#### Integrate custom user avatar provider
+
+We have provided the possibility to use custom avatar provider services, other than Gravatar.
+
+#### Improved app handling over UI
+
+We have made two improvements to ensure that the Developer Console matches more smoothly to operations on apps performed over the CLI. On the one hand we enabled scaling of an app's disk size over the Developer Console. On the other hand we now correctly treat the case of app pushed over the CLI with the --no-start option and then managed in the Developer Console.
+
+#### Improved org and space and account handling over API
+
+We have made improvements for certain account / org / space related functions over the API. The API now explicitely states how many orgs an account may maximally have. Furthermore, we have improved the handling of orphaned users when spaces are deleted.
+
+#### Display improvements for certificate renewal
+
+The date of the next automatic renewal of a certificate is now explicitely returned over the API and displayed in the Developer Console.
+
+#### UI improvements for support users
+
+On the support screens in the Developer Console we have made searching for users easier by combining search by user name and search by email.
+
+#### Billing improvements and fixes
+
+The upgrade of the billing component has provided fixes for a number billing issues as well as small improvements.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues as well as various small improvements.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
+## <a id='4.0'></a> APC 4.0
+
+### Cloud Foundry Core
+
+Cloud Foundry version v239 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v239)) with Diego version v0.1481.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v0.1481.0)).
+**Known Issue**: If an application has a lot of env variables(threshold tbd), which can happen if there are more than 40 services attached, the application is not able to start.
+Besides many other improvements, the CF update includes the fix for [CVE-2016-5006: Cloud Controller API logs user-provided service credentials](https://pivotal.io/security/cve-2016-5006), which caused user provided service credentials to appear in the cloud controller logs. This security issue was at no time critical for Swisscom's customers, as the Cloud Foundry internal logs are in a secured environment.
+
+### Services
+
+Redis Enterprise available in marketplace with 3 plans based on dedicated Redis Sentinel Clusters with 3 data bearing nodes, more infos can be found in Service Description.
+
+### Billing and Portal
+
+#### Backup and restore for MariaDB service instances
+
+Backup and restore of your MariaDB instances can now be performed through the Developer Console. On MariaDB service instances the user has a new tab for creating, restoring and deleting backups for that particular instance. Handling of the backup data is managed in a fully automated and transparent manner.
+
+#### Billing improvements
+
+We improved the way we bill products in two important cases: firstly we now detect when an app is stopped an pause billing during the time the app is not running and secondly we have made our processing more robust when dealing with the deletion of a product.
+
+#### Improved SSL self-service feature
+
+We have added a number of improvements for the SSL self-service feature. On one hand we have provided more guidance to the user and on the other hand we have extended the detail view for SSL certificates in the Developer Console to include all V3 extensions.
+
+#### Improved default apps
+
+We have improved the default app for static files to include values of environment variables like all of the other default apps. Furthermore, we have adapted the PHP default app to display its Environment Variables in a way consistent with the other default apps.
+
+#### Changed rules for resending invitations
+
+Invitations can now be resent, if they were rejected.
+
+#### Improved space role handling for non-managers
+
+A user who is not manager of a space can now also remove roles for himself / herself. This was previously not permitted.
+
+#### Enabled pushing of docker images over Developer Console
+
+Docker images can now be pushed directly over the Developer Console. This was previously only possible via the CLI.
+
+#### Usability improvements in Developer Console
+
+We are constantly improving the usability of the Developer Console based on customer feedback as well as regular usability tests. In particular, we have improved the graph explaining the structure of an account, we have added syntax highlighting on code snippets and we have improved the quick search shortcut on Mac(⌘+k).
+
+## <a id='3.1.9'></a> APC 3.1.9
+
+### Billing and Portal
+
+#### Improved default apps
+
+We have made improvements to the default apps which are pushed in the Developer Console, if no app code is provided.
+
+#### Improvements of backup / restore of MongoDB instances
+
+Several minor improvements have been made since backup / restore of MongoDB instances was launched in the previous release
+
+#### Improved events on app detail
+
+In case of an app crash we have improved error reporting on the events tab in the Developer Console. Furthermore, we have added custom symbols for more event types
+
+#### Improved overview of service keys
+
+The developer console is now correctly showing the service key count in the space summary
+
+#### Improved CORS performance
+
+In scenarios where the API is called by a browser client like the Developer Console, preflight OPTIONS requests can now be cached by the browser
+
+#### V3 extensions of certificates available over API
+
+We have added V3 extensions to the detail information available for certificates over the API
+
+#### Consistent use of buttons
+
+In the Developer Console we have improved usability by consistently using buttons for actions which change data and links for navigation
+
+## <a id='3.1'></a> APC 3.1
+
+### Cloud Foundry Core
+
+Cloud Foundry version v237 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v237)) with Diego version 0.1476.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v0.1476.0)).
+This update fixes, belong many other improvements, the known issues with hanging dopplers and due that logs can not be received.
+
+### Services
+
+Update orchestration framework, should make single service instance provisioning slightly faster
+Various other stability fixes in service management
+
+Backup and restore of MongoDB single instances with up to 30 backups per service instance.
+
+New DNS setup that fixes issues with temporary unresolvable services.
+
+### Billing and Portal
+
+#### Backup and restore for MongoDB service instances
+
+Backup and restore of your MongoDB instances can now be performed through the Developer Console. On MongoDB service instances the user has a new tab for creating, restoring and deleting backups for that particular instance. Handling of the backup data is managed in a fully automated and transparent manner.
+
+#### Extended quota management
+
+We have extended the possibilities for managing quotas at org and space level. Organization quotas can now be assigned by users with organization manager permissions over the API. Furthermore, space quotas can be viewed in the Developer Console in an analogous way to organization quotas.
+
+#### Improved handling for invitations
+
+We have improved the way the users can handle their invitations. In particular, when the user follows the link to the Developer Console in an invitation email, the invitation is displayed in a modal, as soon as the user reaches the Developer Console.
+
+#### Improved API performance when querying permissions
+
+Permissions are typically queried heavily by UI clients which consume our API, like the Developer Console itself. To the benefit of such clients, we have improved the performance of the permissions endpoints on our API.
+
+#### Improved display of certificates
+
+The list of certificates in the sidebar of the space details has been reworked to improve readability by allowing the user to toggle the display of revoked certificates.
+
+#### UI redesign extended to more screens
+
+We have continued our effort to streamline the UI of the developer console. To this end we have made some stylistic changes to the push app wizard and to the app details screen.
+
+## <a id='3.0'></a> APC 3.0
+
+### Cloud Foundry Core
+
+Cloud Foundry version 233 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v233)) with Diego version 0.1461.0 ([release notes](https://github.com/cloudfoundry-incubator/diego-release/releases/tag/v0.1461.0)):
+
+- v233 includes a fix for CVE-2016-0781 UAA Persistent XSS Vulnerability. The UAA OAuth approval pages are vulnerable to an XSS attack by specifying malicious java script content in either the OAuth scopes (SCIM groups) or SCIM group descriptions.
+- v233 also includes a fix for CVE-2016-2165 - Loggregator Request URL Paths. 404 responses from Loggregator endpoints include the URL sent, and are vulnerable to an XSS attack.
+- v233 includes a fix for CVE-2016-0780 Cloud Controller Disk Quota Enforcement. It was discovered that Cloud Foundry does not properly enforce disk quotas in certain cases. An attacker could use an improper disk quota value to bypass enforcement and consume all the disk on DEAs/Diego Cells causing a potential denial of service for other applications.
+- v233 has a potential for only delivering partial sets of log messages for an app, or to the firehose. This can happen if multiple Dopplers have restarted since the Traffic Controllers were deployed. If you suspect you are missing logs, the workaround is to restart the Traffic Controllers.
+- v233 contains a performance regression in Gorouter introduced in v228. At low request volume, the issue is not observable; only at higher request volumes (such as a load test) is the regression evident. The regression was fixed in v234.
+- v233 includes a change in cflinuxfs2 that removes support for libmysqlclient in favor of libmariadb. This will require a clearing of buildpack cache and a restaging of apps for the changes to take place.
+
+### Services
+
+MongoDB Enterprise HA available in marketplace with 3 plans based on 3 node Replica Sets, more infos can be found in Service Description
+Various stability fixes in service management
+
+### Billing and Portal
+
+#### User Stories
+
+- Filter: Enterprise: Invitations - create invitation by username
+- Filter: Log info statements for AUDIT of create/update/delete/execute transactions
+- Filter: Customer Certs: Let's Encrypt Client Adapter and Configuration
+- Filter: Customer Certs: List of Certificates for Space - Refine Query
+- Filter: Customer Certs: Certificate renew Scheduler Config and Permissions
+- Filter: Customer Certs: Revoke certificates
+- Filter: Customer Certs: Config item which globally steers permissions (disable customer certs in virtual private)
+- Filter: mongodb enterprise service broker configuration
+- Portal: Enterprise: Wizard - Custom buildpack creation should be configurable
+- Portal: Add "Create Space" button in orgDetails
+- Portal: Implement tree navigation
+- Portal: Implementation redesign of spaceDetails
+- Portal: Implementation redesign of appDetails
+- Portal: Implementation redesign of serviceDetails
+- Portal: Implementation redesign of accountDetails
+- Portal: Invitations by username: Adapt the portal to the API changes of the Filter
+- Portal: Implement SSL certificate management
+- Portal: Implement details view of certificate
+
+#### Bugs
+
+- Filter: Billing account creation/update may return HTTP 500 error in case invalid VAT number
+- Filter: Spring Batch Jobs endpoint OutOfMemoryError
+- Filter: Prohibiting a billing account via REST call returns 204 but doesn't set the flag
+- Filter: After deletion of org/space/app or service, the associated components remain 'ACTIVE' in NWB while we expect the status 'DEACTIVATED'
+- Portal: opening a sidebar in a space breaks the status label of async services in the status 'Starting failed'
+- Portal: the display of additional routes in the App Tile is broken with Safari with a long application name
+- Portal: Portal is not suggesting routes for all shared domains when pushing a new app
+- Portal: Create User Provided Service: Useless description with typo
+- Portal: faulty logs window when pushing an app
+- Portal: Service instance creation wizard scs-wizard-service-label not translated
+- Portal: Overlapping in App Tile in Space Details page with long app name and app Status 'Stopped'
+- Portal: User can unbind apps without permission to bind apps
+- Portal: Quick jump: style break if text to long
