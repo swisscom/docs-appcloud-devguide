@@ -21,6 +21,64 @@ RabbitMQ Enterprise service was added to our marketplace. It is based on RabbitM
 - Redis service updated from version 3.0.5 to version 3.2.3. The connection timeout is now set to 180 seconds.
 - MongoDB service updated from version 3.0.6 to version 3.2.9. With the new version we default to the WiredTiger storage engine.
 
+### Billing and Portal
+
+#### New billing model for RabbitMQ HA
+
+We have added usage-based billing for RabbitMQ. The user is now charged for RabbitMQ per message sent, with an included daily consumption.
+
+## <a id='4.1.4'></a> APC 4.1.4
+
+### Billing and Portal
+
+#### Added user account view for support users
+
+The support user can now search for user accounts on a dedicated screen. Accounts can also be blocked and unblocked on this screen.
+
+#### Extended wizard for pushing apps over Developer Console
+
+We have added the option to pass a startup command when pushing an app over the developer console (previously only available on the CLI). We have also made ssh access enabled by default in the Developer Console.
+
+#### Improved usability for billing accounts
+
+We have added an error message, when a user tries to create more organisations in a billing account than are allowed.
+
+#### API improvement
+
+We have harmonized the permissions given to org managers with respect to org creation and deletion.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
+## <a id='4.0.18'></a> APC 4.0.18
+
+### Billing and Portal
+
+#### Added app push options in Developer Console
+
+We have extended the push app wizard to be more congruent with the functionality of the CLI. It is now possible to add service bindings, environment variables and some advanced options like 'enable SSH' directly when pushing an app via the Developer Console.
+
+#### Improved avatar configuration options
+
+The avatar configuration has been improved by allowing the unchanged user name to be referenced in avatar URL patterns. Furthermore, we have implemented a more graceful way of dealing with missing avatars, avoiding HTTP 404 errors in the browser console.
+
+#### UI improvements for support users
+
+Support users can now inspect the various roles of a user has on different accounts, orgs and spaces over the Developer Console. Furthermore, the support user can prohibit abusive user accounts over the Developer Console.
+
+#### API improvements for billing accounts
+
+We have made various improvements to the api for handling billing accounts. In particular we fixed the problem, that all users were seeing the 'Billing' tab in certain environments.
+
+#### API fixes for self-service certificates
+
+Due to a small change in the authorizarion procedure of the Let's Encrypt service (https://community.letsencrypt.org/t/upcoming-change-valid-authz-reuse/16982) certificate renewals have ceased to function as originally designed an tested. We have applied a number of fixed to account for this change.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
 ## <a id='4.0.11'></a> APC 4.0.11
 
 ### Billing and Portal
