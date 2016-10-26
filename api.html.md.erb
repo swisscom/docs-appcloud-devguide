@@ -1,0 +1,16 @@
+---
+title: Application Cloud API
+---
+
+<strong><%= modified_date %></strong>
+
+<%=vars.product_full%> offers all its functionality through a well documented API. This API consists of two parts: The native Cloud Foundry API and the Swisscom Extensions API.
+The base URL to all these API endpoints is `<%=vars.api_endpoint%>`.
+
+## <a id='cf'></a>Cloud Foundry API
+
+<%=vars.product_full%> exposes the endpoints of the native Cloud Foundry API. It can be used to interact with all resources that Cloud Foundry knows. You can find the respective documentation of all its versions in the official [Cloud Foundry API documentation](https://apidocs.cloudfoundry.org/).
+
+## <a id='ext'></a>Swisscom Extensions API
+
+Additionally to the endpoints exposed by the Cloud Foundry API, Swisscom offers extended endpoints to access the resources which are provided on top of Cloud Foundry. You can find the documentation about these extended endpoints in the [Swisscom Extensions API documentation](<%=vars.api_endpoint%>/api-doc/);
