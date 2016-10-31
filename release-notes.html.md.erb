@@ -16,13 +16,64 @@ Cloud Foundry version V245 ([release notes](https://github.com/cloudfoundry/cf-r
 
 - Logstash updated to version 2.3.4 which brings safer JSON log parsing. Also, the log pattern was adapted to catch Diego log lines.
 
-<!--
 ### Billing and Portal
 
-#### Lorem ipsum
+#### Improved .NET support
 
-Lorem ipsum
--->
+We have improved our support for .NET by providing a new version of the buildpack along with a default app.
+
+#### Added self-service capability consumption report
+
+We now enable customers to download a monthly consumption report via the API.
+
+#### Connectivity as a Service UI and API improvements
+
+We have improved our Connectivity as a Service feature by streamlining the UI, fixing some early minor bugs and improving the usability when there are larger numbers of connectivity requests.
+
+#### API documentation improvements
+
+We have improved our API documentation by also covering our backup and restore capabilities. We have also fixed an important issue which arose due to a bug in the Swagger framework which we are using to generate the API documentation.
+
+#### UI XSS vulnerability fix
+
+We have fixed an XSS vulnerability recently discovered by the Bug Bounty team which made the organisation name and some user names vulnerable to XSS
+
+#### Preparatory steps for hourly billing
+
+We have implemented the necessary functionality to make the Developer Console ready for displaying prices in the hourly billing model.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
+#### API improvements and fixes
+
+We have provided fixes for two billing issues.
+
+
+## <a id='4.2.24'></a> 4.2.24
+
+### Billing and Portal
+
+#### UI elements for connectivity as a service (Phase 1)
+
+We have added screens for Phase 1 of connectivity as a service to our UI. Authorized users can now assign security zones to organizations and make security group requests on spaces. Furthermore, users in the security officer role can accept and decline such requests using a dedicated screen.
+
+#### API improvements for connectivity as a service (phase 1)
+
+We have made several improvements to the API endpoints for connectivity as a service. In particular we have ensured, that no connectivity as a service features are visible in environments where this feature does not make sense.
+
+#### Public API documentation
+
+We have taken the necessary steps to release the documentation for API publicly
+
+#### API improvement and fixes
+
+We have provided fixes for a number of API issues. In particular, we have fixed a general problem in our batch job framework wich caused certain jobs to create database deadlocks and fail.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
 
 ## <a id='4.2.0'></a> 4.2.0
 
