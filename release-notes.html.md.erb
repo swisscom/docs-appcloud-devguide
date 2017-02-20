@@ -4,6 +4,114 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='5.5.0'></a> 5.5.0
+
+### Billing and Portal
+
+#### UI updated to new Swisscom SDX styling
+
+We have adapted our CSS stylesheet to reflect the most important style changes of SDX, the new Swisscom design guideline for web applications.
+
+#### UI log view switched from Loggregator to Doppler
+
+To prepare for upcoming releases which will upgrade the version of Cloud Foundry we have switched our log view from Loggregator to Doppler, as Loggregator will be deprecated in newer versions of Cloud Foundry.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### Improved asynchronous job processing (Part I)
+
+We have analysed our processing model for asynchronous jobs and have identified a number of improvements which will lead to a significant decrease in regular maintenance work. The first improvement addresses a concurrency issue when scheduling jobs in our clustered environment.
+
+#### Fixed issue with deletion of local users
+
+When local users are deleted, they are only deactivated in UAA to guarantee a minimal audit trace. This fix ensures that the origin of such users is correctly recorded.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
+## <a id='5.4.0'></a> 5.4.0
+
+### Billing and Portal
+
+#### Performance improvements
+
+We have made further significant steps in our campaign to improve the performance of the Developer Console and the API. We were able to optimize the way in which permissions are loaded and checked. Furthermore, we were able to speed up the loading of service plans and of the list of organizations.
+
+#### Multicloud preparations
+
+We have prepared the way our components are deployed to the context of multicloud. These improvements are not directly noticeable to the end-user but they constitute a significant step towards making our entire cloud solution even more reliable.
+
+#### Billing improvements
+
+We have made several minor improvements in the area of billing and pricing. In particular, estimated prices are now displayed with higher precision in the portal. In addition, we have made further improvements in the way our API component communicates with the billing component.
+
+#### Connectivity as a Service: improvements
+
+We are constantly improving the Connectivity as a Service features. In particular, we have improved the search function on connectivity requests for security officers.
+
+#### Routes services support in Developer Console
+
+We have taken a further step towards integrating the concept of route services in the Developer Console by enabling the user to edit route services.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### SSL self service improvements
+
+We have made further improvements of our SSL self-service feature. In particular, we give the user an option to retry certificate creation in certain error cases.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+## <a id='5.3.0'></a> 5.3.0
+
+### Billing and Portal
+
+#### Improved account status transitions
+
+Following a detailed analysis we were able to greatly simplify the way our API component communicates with the billing component for determining the status of a billing account. In particular, we were able to entirely eliminate the need for calls from the billing component back to the API component. These improvements are not directly noticeable to the end-user but they are making our components more stable and are eliminating a substantial amount of configuration and maintenance overhead.
+
+#### Prepared interactive service provisioning
+
+We have added the option for a service to include a service-specific dashboard which can be used to configure the service at the time of provisioning or during its operation.
+
+#### Connectivity as a Service: improvements
+
+We are constantly improving the Connectivity as a Service fetaures, as our experience with these features broadens. In particular, we have added a detail view for connectivity requests.
+
+#### Display routes services in Developer Console
+
+We have taken a first step to integrate the concept of route services in the Developer Console by displaying information about them in the service tiles and service details.
+
+#### Fixed an XSS vulnerability in Developer Console
+
+We discovered that error messages pointing to already existing names of orgs, spaces, services and apps were not properly sanitized and hence vulnerable to XSS attacks in the entity name. This vulnerability is now fixed.
+
+#### Performance improvements
+
+We have started a new campaign to further improve loading times in the Developer Console by maximizing parallel asynchronous data loading. We were already able to improve loading of space details, of the navigation tree and of permission in general. More improvements will follow in the next release.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues as well as various small improvements. In particular, we fixed a bug which led to problems when some locally managed users were deleted.
+
 ## <a id='5.2.0'></a> 5.2.0
 
 ### Cloud Foundry Core
