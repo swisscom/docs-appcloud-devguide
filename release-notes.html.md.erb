@@ -4,6 +4,58 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='5.7.0'></a> 5.5.0
+
+### Billing and Portal
+
+#### Connectivity as a Service: added UI support for additional protocols
+
+Until now, security group requests and default groups supported only the protocols 'tcp' and 'udp'. We have now extended support for 'icmp' and the option 'all' to the UI.
+
+#### Improved email notifications
+
+Invitation emails for spaces, organizations and billing accounts were confusing when the targeted user was already known to the inviter as invitations to new entities were notified in the same way as role changes. We have changed this behaviour to distinguish between new roles and changed roles.
+
+#### Support for long invoice lists
+
+With every month of operation, the list of invoices in the account screen of each account becomes longer. We have implemented infinite scrolling to avoid loading all invoices in the UI when the list is too long.
+
+#### Improved user search for support users
+
+When support users are looking for a particular user, they can now use first and last names in addition to the username and the email address.
+
+#### More robust automatic renewal process for ssl certificates
+
+In some cases the authentication callback from Let's Encrypt for an automatic certificate renewal reaches our cloud too late and the corresponding renewal process becomes stuck, requiring a manual intervention. We have increased the amount of time for which we wait for this callback.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
+## <a id='5.6.0'></a> 5.5.0
+
+### Billing and Portal
+
+#### Improved asynchronous job processing (Part II)
+
+We have analysed our processing model for asynchronous jobs and have identified a number of improvements which will lead to a significant decrease in regular maintenance work. This second improvement addresses an issue which caused asynchronous jobs to be executed out of sequence in our clustered environment.
+
+#### Connectivity as a Service: added API support for additional protocols
+
+Until now, security group requests and default groups supported only the protocols 'tcp' and 'udp'. We have now added support for 'icmp' and the option 'all'.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
 ## <a id='5.5.0'></a> 5.5.0
 
 ### Billing and Portal
