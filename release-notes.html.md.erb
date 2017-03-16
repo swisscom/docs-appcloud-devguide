@@ -4,6 +4,52 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.1.0'></a> 6.1.0
+
+### Billing and Portal
+
+#### Connectivity as a Service: zone assignment made optional
+
+Until now, security group requests could only be created in spaces belonging to orgs which have a security zone assigned. We have now removed this restriction to enable users to be more flexible with respect to point in time at which they define the zone assignment.
+
+#### Improved info boxes in Developer Console
+
+On many screens of the Developer Console we use info boxes to guide the user with respect to options and restrictions. More experienced users have expressed the wish to remove these info boxes. Hence, we have added an option to close individual boxes persistently and to reset the state of the UI to make all boxes appear again.
+
+#### Improved UI for support users
+
+As our user base and the number of instances of our cloud grows, the need for support functionality increases. We have added pagination of the list of all users in the system, available to support users. Furthermore, we have enabled support users to search users by name in addition to the username and the email address.
+
+#### Improved scaling limit for apps in Developer Console
+
+Until now, scaling an app's memory in the Developer Console was limited to a hardcoded value of 2GB. We have removed this unnecessary restriction and instead have linked the memory scaling limit of apps to the instance_memory_limit value of the organisation quota.
+
+#### Show service events in Developer Console
+
+So far, only the app detail view of the Developer Console featured an events tab. We have now also added an events tab to the service details.
+
+#### Improved validation of fully qualified domain names for SSL certificates
+
+Our F5-based entry server currently only allows CSR generation for fully qualified domain names with up to 63 octets. For longer names the generation process fails and causes the corresponding certificate request to fail intransparently. To make this restriction more transparent, we have added a validation to our API to disallow longer FQDNs.
+
+#### Custom service parameters during service creation
+
+We have prepared the service creation wizard for services which need to collect custom parameters during the creation step.
+
+#### Make data loading in UI more flexible
+
+We have improved the way data from the backend is propagated through the component hierarchy in our UI.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number for UI issues.
+
+## <a id='6.0.0'></a> 6.0.0
+
+### Cloud Foundry Core
+
+Cloud Foundry version V251 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v251)) with Diego version 1.5.4 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.5.4)).
+
 ## <a id='5.7.0'></a> 5.7.0
 
 ### Billing and Portal
