@@ -8,6 +8,36 @@ title: APC Release Notes
 
 Release date: 20.4.2017
 
+### Billing and Portal
+
+#### More flexible buildpack management
+
+In virtual private environments it is desirable to allow certain users to manage buildpacks without giving them superuser permissions. Hence, we have introduced a new role buildpack_admin which can be assigned to any user and allows them to update non-system buildpacks.
+
+#### API for technical user creation
+
+We have added an option to enable arbitrary users to create technical users for use in tooling such as a CI/CD pipeline. Technical users are currently created at space level and are deleted when they are no longer associated with any space.
+
+#### Enable credit card update in status "cancellation pending"
+
+Until now users did not have permission to update the credit card information when their account was in status "cancellation pending". In particular, this led to the situation, that if an account could not be cancelled due to an invalid credit card (e.g. due to expiry), the user could update the credit card to rectify the situation. This has now been corrected.
+
+#### Improved user invitation and notifications
+
+We have made the UI for inviting users to orgs and spaces easier to understand. Furthermore we have improved the email messages which users receive when they are invited.
+
+#### Improved user view for support users
+
+Inactive users are often irrelevant when looking up users in support scenarios. We have added the option to filter out inactive users from the user list for support users.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided a fix for an API issue.
+
 ### Cloud Foundry Core
 
 Cloud Foundry version V254 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v254)) with Diego version 1.10.1 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.10.1)).
