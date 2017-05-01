@@ -4,7 +4,276 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.3.0'></a> 6.3.0
+
+Release date: 01.5.2017
+
+### Cloud Foundry Core
+
+Cloud Foundry version V257 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v257)) with Diego version 1.12.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.12.0)).
+
+## <a id='6.2.0'></a> 6.2.0
+
+Release date: 20.4.2017
+
+### Billing and Portal
+
+#### More flexible buildpack management
+
+In virtual private environments it is desirable to allow certain users to manage buildpacks without giving them superuser permissions. Hence, we have introduced a new role buildpack_admin which can be assigned to any user and allows them to update non-system buildpacks.
+
+#### API for technical user creation
+
+We have added an option to enable arbitrary users to create technical users for use in tooling such as a CI/CD pipeline. Technical users are currently created at space level and are deleted when they are no longer associated with any space.
+
+#### Enable credit card update in status "cancellation pending"
+
+Until now users did not have permission to update the credit card information when their account was in status "cancellation pending". In particular, this led to the situation, that if an account could not be cancelled due to an invalid credit card (e.g. due to expiry), the user could update the credit card to rectify the situation. This has now been corrected.
+
+#### Improved user invitation and notifications
+
+We have made the UI for inviting users to orgs and spaces easier to understand. Furthermore we have improved the email messages which users receive when they are invited.
+
+#### Improved user view for support users
+
+Inactive users are often irrelevant when looking up users in support scenarios. We have added the option to filter out inactive users from the user list for support users.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided a fix for an API issue.
+
+### Cloud Foundry Core
+
+Cloud Foundry version V254 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v254)) with Diego version 1.10.1 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.10.1)).
+
+## <a id='6.1.0'></a> 6.1.0
+
+Release date: 16.3.2017
+
+### Billing and Portal
+
+#### Connectivity as a Service: zone assignment made optional
+
+Until now, security group requests could only be created in spaces belonging to orgs which have a security zone assigned. We have now removed this restriction to enable users to be more flexible with respect to point in time at which they define the zone assignment.
+
+#### Improved info boxes in Developer Console
+
+On many screens of the Developer Console we use info boxes to guide the user with respect to options and restrictions. More experienced users have expressed the wish to remove these info boxes. Hence, we have added an option to close individual boxes persistently and to reset the state of the UI to make all boxes appear again.
+
+#### Improved UI for support users
+
+As our user base and the number of instances of our cloud grows, the need for support functionality increases. We have added pagination of the list of all users in the system, available to support users. Furthermore, we have enabled support users to search users by name in addition to the username and the email address.
+
+#### Improved scaling limit for apps in Developer Console
+
+Until now, scaling an app's memory in the Developer Console was limited to a hardcoded value of 2GB. We have removed this unnecessary restriction and instead have linked the memory scaling limit of apps to the instance_memory_limit value of the organisation quota.
+
+#### Show service events in Developer Console
+
+So far, only the app detail view of the Developer Console featured an events tab. We have now also added an events tab to the service details.
+
+#### Improved validation of fully qualified domain names for SSL certificates
+
+Our F5-based entry server currently only allows CSR generation for fully qualified domain names with up to 63 octets. For longer names the generation process fails and causes the corresponding certificate request to fail intransparently. To make this restriction more transparent, we have added a validation to our API to disallow longer FQDNs.
+
+#### Custom service parameters during service creation
+
+We have prepared the service creation wizard for services which need to collect custom parameters during the creation step.
+
+#### Make data loading in UI more flexible
+
+We have improved the way data from the backend is propagated through the component hierarchy in our UI.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number for UI issues.
+
+## <a id='6.0.0'></a> 6.0.0
+
+Release date: 16.3.2017 (deployed with 6.1.0)
+
+### Cloud Foundry Core
+
+Cloud Foundry version V251 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v251)) with Diego version 1.5.4 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.5.4)).
+With this Cloud Foundry version the minimum required cf-cli version is v6.22.2.
+
+## <a id='5.7.0'></a> 5.7.0
+
+Release date: 6.3.2017
+
+### Billing and Portal
+
+#### Connectivity as a Service: added UI support for additional protocols
+
+Until now, security group requests and default groups supported only the protocols 'tcp' and 'udp'. We have now extended support for 'icmp' and the option 'all' to the UI.
+
+#### Improved email notifications
+
+Invitation emails for spaces, organizations and billing accounts were confusing when the targeted user was already known to the inviter as invitations to new entities were notified in the same way as role changes. We have changed this behaviour to distinguish between new roles and changed roles.
+
+#### Support for long invoice lists
+
+With every month of operation, the list of invoices in the account screen of each account becomes longer. We have implemented infinite scrolling to avoid loading all invoices in the UI when the list is too long.
+
+#### Improved user search for support users
+
+When support users are looking for a particular user, they can now use first and last names in addition to the username and the email address.
+
+#### More robust automatic renewal process for ssl certificates
+
+In some cases the authentication callback from Let's Encrypt for an automatic certificate renewal reaches our cloud too late and the corresponding renewal process becomes stuck, requiring a manual intervention. We have increased the amount of time for which we wait for this callback.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
+## <a id='5.6.0'></a> 5.6.0
+
+Release date: 21.2.2017
+
+### Billing and Portal
+
+#### Improved asynchronous job processing (Part II)
+
+We have analysed our processing model for asynchronous jobs and have identified a number of improvements which will lead to a significant decrease in regular maintenance work. This second improvement addresses an issue which caused asynchronous jobs to be executed out of sequence in our clustered environment.
+
+#### Connectivity as a Service: added API support for additional protocols
+
+Until now, security group requests and default groups supported only the protocols 'tcp' and 'udp'. We have now added support for 'icmp' and the option 'all'.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
+## <a id='5.5.0'></a> 5.5.0
+
+Release date: 31.1.2017
+
+### Billing and Portal
+
+#### UI updated to new Swisscom SDX styling
+
+We have adapted our CSS stylesheet to reflect the most important style changes of SDX, the new Swisscom design guideline for web applications.
+
+#### UI log view switched from Loggregator to Doppler
+
+To prepare for upcoming releases which will upgrade the version of Cloud Foundry we have switched our log view from Loggregator to Doppler, as Loggregator will be deprecated in newer versions of Cloud Foundry.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### Improved asynchronous job processing (Part I)
+
+We have analysed our processing model for asynchronous jobs and have identified a number of improvements which will lead to a significant decrease in regular maintenance work. The first improvement addresses a concurrency issue when scheduling jobs in our clustered environment.
+
+#### Fixed issue with deletion of local users
+
+When local users are deleted, they are only deactivated in UAA to guarantee a minimal audit trace. This fix ensures that the origin of such users is correctly recorded.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues.
+
+## <a id='5.4.0'></a> 5.4.0
+
+Release date: 18.1.2017
+
+### Billing and Portal
+
+#### Performance improvements
+
+We have made further significant steps in our campaign to improve the performance of the Developer Console and the API. We were able to optimize the way in which permissions are loaded and checked. Furthermore, we were able to speed up the loading of service plans and of the list of organizations.
+
+#### Multicloud preparations
+
+We have prepared the way our components are deployed to the context of multicloud. These improvements are not directly noticeable to the end-user but they constitute a significant step towards making our entire cloud solution even more reliable.
+
+#### Billing improvements
+
+We have made several minor improvements in the area of billing and pricing. In particular, estimated prices are now displayed with higher precision in the portal. In addition, we have made further improvements in the way our API component communicates with the billing component.
+
+#### Connectivity as a Service: improvements
+
+We are constantly improving the Connectivity as a Service features. In particular, we have improved the search function on connectivity requests for security officers.
+
+#### Routes services support in Developer Console
+
+We have taken a further step towards integrating the concept of route services in the Developer Console by enabling the user to edit route services.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### SSL self service improvements
+
+We have made further improvements of our SSL self-service feature. In particular, we give the user an option to retry certificate creation in certain error cases.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
+## <a id='5.3.0'></a> 5.3.0
+
+Release date: 9.1.17
+
+### Billing and Portal
+
+#### Improved account status transitions
+
+Following a detailed analysis we were able to greatly simplify the way our API component communicates with the billing component for determining the status of a billing account. In particular, we were able to entirely eliminate the need for calls from the billing component back to the API component. These improvements are not directly noticeable to the end-user but they are making our components more stable and are eliminating a substantial amount of configuration and maintenance overhead.
+
+#### Prepared interactive service provisioning
+
+We have added the option for a service to include a service-specific dashboard which can be used to configure the service at the time of provisioning or during its operation.
+
+#### Connectivity as a Service: improvements
+
+We are constantly improving the Connectivity as a Service fetaures, as our experience with these features broadens. In particular, we have added a detail view for connectivity requests.
+
+#### Display routes services in Developer Console
+
+We have taken a first step to integrate the concept of route services in the Developer Console by displaying information about them in the service tiles and service details.
+
+#### Fixed an XSS vulnerability in Developer Console
+
+We discovered that error messages pointing to already existing names of orgs, spaces, services and apps were not properly sanitized and hence vulnerable to XSS attacks in the entity name. This vulnerability is now fixed.
+
+#### Performance improvements
+
+We have started a new campaign to further improve loading times in the Developer Console by maximizing parallel asynchronous data loading. We were already able to improve loading of space details, of the navigation tree and of permission in general. More improvements will follow in the next release.
+
+#### UI consistency improvements
+
+We are constantly striving to streamline our usabilty and improve the consistency of our UI.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues as well as various small improvements.
+
+#### API improvements and fixes
+
+We have provided fixes for a number of API issues as well as various small improvements. In particular, we fixed a bug which led to problems when some locally managed users were deleted.
+
 ## <a id='5.2.0'></a> 5.2.0
+
+Release date: 6.12.2016
 
 ### Cloud Foundry Core
 
@@ -46,6 +315,8 @@ We have provided fixes for a number of API issues as well as various small impro
 
 ## <a id='5.1.0'></a> 5.1.0
 
+Release date: 16.11.2016
+
 ### Cloud Foundry Core
 
 - Cloud Foundry version V246 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v246)) with Diego version 0.1488.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v0.1488.0)).
@@ -66,6 +337,8 @@ We have provided fixes for a number of UI small issues.
 We have provided fixes for the following four mostly technical API issues.
 
 ## <a id='5.0.0'></a> 5.0.0
+
+Release date: 27.10.2016
 
 ### Cloud Foundry Core
 
