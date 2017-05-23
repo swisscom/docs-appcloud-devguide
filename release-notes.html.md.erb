@@ -4,6 +4,48 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.3.28'></a> 6.3.28
+
+Release date: 16.5.2017
+
+### Billing and Portal
+
+#### Creation and management of technical users via the UI
+
+After having implemented the API part in the last release we now enable arbitrary users to create technical users via the UI for use in tooling such as a CI / CD pipeline. Technical users are created at space level and are automatically deleted when they are no longer associated with any space.
+
+#### Live status information for services (Part I)
+
+We are increasing the value of our UI by making certain suitable information available to the user in a live way, without requiring a page reload. As a first step in this direction we are showing service status changes as they happen.
+
+#### Improved user invitation and notifications
+
+We have made the email messages which users receive when they are invited visually more appealing by using modern HTML email standards.
+
+#### Connectivity as a service improvements
+
+We have improved the handling of connectivity request failures in the API and the UI.
+
+#### Health checks configurable via UI
+
+We are constantly evaluating which CLI features to also expose in the UI. As a part of this initiative we have decided to enable the user to configure health checks when pushing apps via the UI.
+
+#### Improved monitoring of certificate renewal process
+
+We have improved our internal monitoring of the automated renewal of self-service certificates. This will allow us to react more quickly to problems which sporadically arise due to the highly distributed nature of this process.
+
+#### UI updated to new Swisscom SDX styling
+
+We have adapted pictograms and info boxes to SDX, the new Swisscom design guideline for web applications.
+
+#### API improvements and fixes
+
+We have provided two small API improvements.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
 ## <a id='6.3.0'></a> 6.3.0
 
 Release date: 01.5.2017
