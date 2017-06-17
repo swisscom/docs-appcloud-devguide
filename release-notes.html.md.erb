@@ -4,6 +4,32 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.4.7'></a> 6.4.7
+
+Release date: 13.6.2017
+
+### Billing and Portal
+
+#### CLI version 6.26 support
+
+As of version 6.26 the Cloud Foundry command line interface (CLI) makes use of some endpoints of the Cloud Controller v3 API. We have proxied the required endpoints for GET requests in our own API extension in order to support CLI versions higher than 6.26.
+
+#### Status page integrated in UI
+
+We now display the overall status of the cloud directly in the UI and have added a link from the UI to the status page to provide more detailed status information.
+
+#### Service usage displayed in UI
+
+For usage based services we have added a new metrics tab in the service instance details where we display the service instance's current usage.
+
+#### UI improvements and fixes
+
+We have provided a various UI improvements and bug fixes.
+
+#### API improvements and fixes
+
+We have provided a number of API improvements and bug fixes.
+
 ## <a id='6.3.28'></a> 6.3.28
 
 Release date: 16.5.2017
