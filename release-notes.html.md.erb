@@ -4,6 +4,40 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.5.11'></a> 6.5.11
+
+Release date: 5.7.2017
+
+### Billing and Portal
+
+#### Connectivity as a Service API: tagging and bundling of requests
+
+We have extended the Connectivity as a Service API to include tagging of connectivity requests as well as adding a free-text description. Furthemore, we have added the option to search connectivity requests by tag or status. In addition, we now enable the client to bundle several connectivity rules into one request and we allow the security_officer role to create requests. The latter is useful in automation scenarios where this role is given to a central technical user.
+
+#### Buildpack administration via API enabled
+
+Administrative operations on buildpacks were until now reserved to our own operators. We now provide a buildpack_admin user role which can be granted via the UAA and which entitles the user to create, read, update and delete the buildpacks used as defaults by the cloud instance.
+
+#### Isolation segment operations exposed via API
+
+In order to enable various features which use the Isolation Segment concept offered by the Cloud Foundry v3 API, we are exposing these endpoint on our API.
+
+#### Improve background job processing
+
+We are constantly improving our background job processing framework to ensure a higher throughput of asynchronous jobs while making this mechanism more robust in case of single job failures.
+
+#### UI usability improvements
+
+We have improved the usability of our UI in accordance with the results from our periodical usability tests. We now apply consistent sorting of entities where applicable. Furthermore, we have improved the performance of the quick jump feature when dealing with a large number of accounts, orgs and spaces. We have also added three minor features for making work with the UI more efficient when dealing with app environment variables, ssl certificates and domains.
+
+#### Other UI improvements and fixes
+
+We have provided a various other UI improvements and bug fixes.
+
+#### API improvements and fixes
+
+We have provided a number of API improvements and bug fixes.
+
 ## <a id='6.4.7'></a> 6.4.7
 
 Release date: 13.6.2017
