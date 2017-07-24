@@ -4,6 +4,108 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.5.11'></a> 6.5.11
+
+Release date: 5.7.2017
+
+### Billing and Portal
+
+#### Connectivity as a Service API: tagging and bundling of requests
+
+We have extended the Connectivity as a Service API to include tagging of connectivity requests as well as adding a free-text description. Furthemore, we have added the option to search connectivity requests by tag or status. In addition, we now enable the client to bundle several connectivity rules into one request and we allow the security_officer role to create requests. The latter is useful in automation scenarios where this role is given to a central technical user.
+
+#### Buildpack administration via API enabled
+
+Administrative operations on buildpacks were until now reserved to our own operators. We now provide a buildpack_admin user role which can be granted via the UAA and which entitles the user to create, read, update and delete the buildpacks used as defaults by the cloud instance.
+
+#### Isolation segment operations exposed via API
+
+In order to enable various features which use the Isolation Segment concept offered by the Cloud Foundry v3 API, we are exposing these endpoint on our API.
+
+#### Improve background job processing
+
+We are constantly improving our background job processing framework to ensure a higher throughput of asynchronous jobs while making this mechanism more robust in case of single job failures.
+
+#### UI usability improvements
+
+We have improved the usability of our UI in accordance with the results from our periodical usability tests. We now apply consistent sorting of entities where applicable. Furthermore, we have improved the performance of the quick jump feature when dealing with a large number of accounts, orgs and spaces. We have also added three minor features for making work with the UI more efficient when dealing with app environment variables, ssl certificates and domains.
+
+#### Other UI improvements and fixes
+
+We have provided a various other UI improvements and bug fixes.
+
+#### API improvements and fixes
+
+We have provided a number of API improvements and bug fixes.
+
+## <a id='6.4.7'></a> 6.4.7
+
+Release date: 13.6.2017
+
+### Billing and Portal
+
+#### CLI version 6.26 support
+
+As of version 6.26 the Cloud Foundry command line interface (CLI) makes use of some endpoints of the Cloud Controller v3 API. We have proxied the required endpoints for GET requests in our own API extension in order to support CLI versions higher than 6.26.
+
+#### Status page integrated in UI
+
+We now display the overall status of the cloud directly in the UI and have added a link from the UI to the status page to provide more detailed status information.
+
+#### Service usage displayed in UI
+
+For usage based services we have added a new metrics tab in the service instance details where we display the service instance's current usage.
+
+#### UI improvements and fixes
+
+We have provided a various UI improvements and bug fixes.
+
+#### API improvements and fixes
+
+We have provided a number of API improvements and bug fixes.
+
+## <a id='6.3.28'></a> 6.3.28
+
+Release date: 16.5.2017
+
+### Billing and Portal
+
+#### Creation and management of technical users via the UI
+
+After having implemented the API part in the last release we now enable arbitrary users to create technical users via the UI for use in tooling such as a CI / CD pipeline. Technical users are created at space level and are automatically deleted when they are no longer associated with any space.
+
+#### Live status information for services (Part I)
+
+We are increasing the value of our UI by making certain suitable information available to the user in a live way, without requiring a page reload. As a first step in this direction we are showing service status changes as they happen.
+
+#### Improved user invitation and notifications
+
+We have made the email messages which users receive when they are invited visually more appealing by using modern HTML email standards.
+
+#### Connectivity as a service improvements
+
+We have improved the handling of connectivity request failures in the API and the UI.
+
+#### Health checks configurable via UI
+
+We are constantly evaluating which CLI features to also expose in the UI. As a part of this initiative we have decided to enable the user to configure health checks when pushing apps via the UI.
+
+#### Improved monitoring of certificate renewal process
+
+We have improved our internal monitoring of the automated renewal of self-service certificates. This will allow us to react more quickly to problems which sporadically arise due to the highly distributed nature of this process.
+
+#### UI updated to new Swisscom SDX styling
+
+We have adapted pictograms and info boxes to SDX, the new Swisscom design guideline for web applications.
+
+#### API improvements and fixes
+
+We have provided two small API improvements.
+
+#### UI improvements and fixes
+
+We have provided fixes for a number of UI issues.
+
 ## <a id='6.3.0'></a> 6.3.0
 
 Release date: 01.5.2017
