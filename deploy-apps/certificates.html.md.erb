@@ -38,3 +38,7 @@ In case you ever run into reasons to revoke an SSL certificate, we also support 
 ## <a id='renewal'></a> Certificate Renewal
 
 When your certificate is reaching its expiration date, <%=vars.product_short%> automatically triggers a renewal with Let's Encrypt. This will renew your certificate without requiring any interaction on your part.
+
+## <a id='limitations'></a> Limitations
+
+Let's Encrypt enforces [Rate Limits](https://letsencrypt.org/docs/rate-limits/) on certificate requests per domain. For each route a new certificate is requested. Therefore, a maximum of currently 20 routes per domain can be secured using Let's Encrypt certificates. Please check the up to date [rate limit on Let's Encrypts documentation]( https://letsencrypt.org/docs/rate-limits/).
