@@ -7,10 +7,12 @@ title: Two-Factor Authentication
 If you enable Passeport's two-factor authentication, you have to use the `--sso` flag and follow the instructions.
 
 <pre class="terminal">
-cf login -a <%=vars.api_endpoint%> --sso
-API endpoint: <%=vars.api_endpoint%>
+cf login -a $API_ENDPOINT --sso
+API endpoint: $API_ENDPOINT
 
-One Time Code ( <%=vars.api_endpoint%>/passcode )>
+One Time Code ( $API_ENDPOINT/passcode )>
 </pre>
+
+Replace `$API_ENDPOINT` with your actial API endpoint. It is <%= vars.api_endpoint %>
 
 Switching to the browser and obtaining a one time code is needed because the cf CLI does not support two-factor auth directly from the terminal yet.
