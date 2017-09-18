@@ -4,6 +4,60 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='6.7.8'></a> 6.7.8
+
+Release date: 18.09.2017
+
+### Cloud Foundry Core
+
+Cloud Foundry version v271 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v271)) with Diego version 1.25.1 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.25.1)).
+
+#### Buildpacks
+
+Java Buildpack: v3.19
+Ruby Buildpack: v1.6.47
+Go Buildpack: v1.8.6
+Node.js Buildpack: v1.6.6
+Python Buildpack: v1.5.24
+PHP Buildpack: v4.3.40
+Staticfile Buildpack: v1.4.13
+Binary Buildpack: v1.0.14
+.Net Core Buildpack: v1.0.24
+
+## <a id='6.6.18'></a> 6.6.18
+
+Release date: 28.07.2017
+
+### Billing and Portal
+
+#### Connectivity as a Service UI: tagging and bundling of requests
+
+We have extended the Connectivity as a Service UI to include tagging of connectivity requests as well as adding a free-text description. In addition, we now enable the client to bundle several connectivity rules into one request.
+
+#### Improve background job processing
+
+We are constantly improving our background job processing framework to ensure a higher throughput of asynchronous jobs while making this mechanism more robust in case of single job failures.
+
+#### UI usability improvements
+
+We have improved the usability of our UI in accordance with the results from our periodical usability tests. One improvement is that users with many billing accounts can now hide canceled accounts in the navigation. Furthermore, we have made the display of the billing history clearer by giving the current month a more prominent appearance.
+
+#### Simplify configuration of API component
+
+We have enhanced our defaults for service and buildpack configuration data in order to simplify the rollout of new environments for us as a cloud provider. It turns out that this data rarely varies between environments and if it does it can be overridden configuratively.
+
+#### Other UI improvements and fixes
+
+We have provided a various other UI improvements and bug fixes.
+
+#### API improvements and fixes
+
+We have provided a number of API improvements and bug fixes.
+
+### Cloud Foundry Core
+
+Cloud Foundry version v268 ([release notes](https://github.com/cloudfoundry/cf-release/releases/tag/v268)) with Diego version 1.23.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v1.23.0)).
+
 ## <a id='6.5.11'></a> 6.5.11
 
 Release date: 5.7.2017
