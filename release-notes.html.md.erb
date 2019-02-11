@@ -7,6 +7,34 @@ title: APC Release Notes
 
 ## <a id='1.17.1'></a> 1.17.1
 
+Release date: 12.02.2019
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v7.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v7.2.0)) with
+Diego version v2.27.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.27.0)) and Capi version v1.74.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.74.0)). 
+
+#### Buildpacks (stacks: cflinuxfs3/cflinuxfs2)
+
+The Linux cflinuxfs3 stack(ubuntu 18.08) is now set as default. Stack cflinuxfs2 (ubuntu 14.04) is still supported.
+Linux-based apps pushed without an explicit flag specifying the cflinuxfs2 stack will now be staged on cflinuxfs3. 
+
+- Java Buildpack: v4.17.2 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
+- Ruby Buildpack: v1.7.31
+- Go Buildpack: v1.8.32
+- Node.js Buildpack: v1.6.41
+- Python Buildpack: v1.6.27
+- PHP Buildpack: v4.3.69
+- Staticfile Buildpack: v1.4.39
+- Binary Buildpack: v1.0.30
+- .Net Core Buildpack: v2.2.4
+- NGINX Buildpack: v1.0.6  (new)
+- R Buildpack: v1.0.4  (new)
+
+
+
+## <a id='1.17.1'></a> 1.17.1
+
 Release date: 26.11.2018
 
 ### Cloud Foundry Core
