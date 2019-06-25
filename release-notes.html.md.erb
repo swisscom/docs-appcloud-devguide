@@ -5,6 +5,37 @@ title: APC Release Notes
 <strong><%= modified_date %></strong>
 
 
+## <a id='2.1.9'></a> 2.1.9
+
+Release date: 25.06.2019
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v9.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v9.2.0)) with
+Diego version v2.31.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.31.0)) and Capi version v1.81.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.81.0)). 
+
+#### Buildpacks (stacks: cflinuxfs3)
+
+Only the Linux cflinuxfs3 stack(ubuntu 18.08) is available and supported now.
+We removed an old java version 3 buildpack from our system. 
+If this old java version is still needed you can do so by pointing to github in the manifest.yml or 
+by `cf push -b https://github.com/cloudfoundry/java-buildpack#v3.19.2` (released 24/10/2017).
+
+
+- Java Buildpack: v4.19.1 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
+- Ruby Buildpack: v1.7.39
+- Go Buildpack: v1.8.40
+- Node.js Buildpack: v1.6.50
+- Python Buildpack: v1.6.34
+- PHP Buildpack: v4.3.77
+- Staticfile Buildpack: v1.4.42
+- Binary Buildpack: v1.0.32
+- .Net Core Buildpack: v2.2.12
+- NGINX Buildpack: v1.0.12
+- R Buildpack: v1.0.10
+
+
+
 ## <a id='1.19.9'></a> 1.19.9
 
 Release date: 01.05.2019
@@ -30,7 +61,6 @@ Linux-based apps newly pushed without an explicit flag specifying the cflinuxfs2
 - .Net Core Buildpack: v2.2.9
 - NGINX Buildpack: v1.0.10
 - R Buildpack: v1.0.8
-
 
 
 
