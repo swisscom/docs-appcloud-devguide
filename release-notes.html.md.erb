@@ -5,6 +5,33 @@ title: APC Release Notes
 <strong><%= modified_date %></strong>
 
 
+## <a id='2.2.7'></a> 2.2.7
+
+Release date: 29.07.2019/06.08.2019
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v9.5.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v9.5.0)) with
+Diego version v2.34.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.34.0)) and Capi version v1.83.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.83.0)). 
+
+Component releases which are divergent to cf-deployment v9.5.0: 
+- newer versions of garden-runc and bpm (to fix a CVE).
+
+#### Buildpacks (stacks: cflinuxfs3)
+
+- Java Buildpack: v4.19.1 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
+- Ruby Buildpack: v1.7.40
+- Go Buildpack: v1.8.41
+- Node.js Buildpack: v1.6.51
+- Python Buildpack: v1.6.34
+- PHP Buildpack: v4.3.78
+- Staticfile Buildpack: v1.4.43
+- Binary Buildpack: v1.0.32
+- .Net Core Buildpack: v2.2.12
+- NGINX Buildpack: v1.0.14
+- R Buildpack: v1.0.10
+
+
 ## <a id='2.1.9'></a> 2.1.9
 
 Release date: 25.06.2019
