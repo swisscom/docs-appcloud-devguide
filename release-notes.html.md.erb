@@ -15,6 +15,22 @@ Cloud Foundry cf-deployment v12.31.0 ([release notes](https://github.com/cloudfo
 Diego version v2.43.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.43.0)) and Capi version v1.91.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.91.0)).
 
 
+#### Known Issues
+##### Service is provided by multiple service brokers
+
+If you use space scoped service brokers, you must use the '-b <service-broker-name>' flag to create new services. This applies for every service in the marketplace.
+If you do not provide this flag, the service creation fails with with an error message similar to the following:
+
+```
+Service 'task-scheduler' is provided by multiple service brokers. Specify a broker by using the '-b' flag.
+```
+
+As a workaround, provide the '-b' flag with the correct service broker name. For example:
+
+```
+cf cs task-scheduler free test -b task-scheduler
+```
+
 #### Buildpacks (stacks: cflinuxfs3)
 
 - Java Buildpack: v4.28 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
