@@ -5,6 +5,48 @@ title: APC Release Notes
 <strong><%= modified_date %></strong>
 
 
+## <a id='2.10.x'></a> 2.10.x
+
+Release date: 23.03.2020
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v12.36.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v12.36.0)) with
+Diego version v2.44.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.44.0)) and Capi version v1.91.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.91.0)).
+
+
+#### Known Issues
+##### Service is provided by multiple service brokers
+
+If you use space scoped service brokers, you must use the '-b <service-broker-name>' flag to create new services. This applies for every service in the marketplace.
+If you do not provide this flag, the service creation fails with with an error message similar to the following:
+
+```
+Service 'task-scheduler' is provided by multiple service brokers. Specify a broker by using the '-b' flag.
+```
+
+As a workaround, provide the '-b' flag with the correct service broker name. For example:
+
+```
+cf cs task-scheduler free test -b task-scheduler
+```
+
+#### Buildpacks (stacks: cflinuxfs3)
+
+- Java Buildpack: v4.28 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
+- Ruby Buildpack: v1.8.13
+- Go Buildpack: v1.9.7
+- Node.js Buildpack: v1.7.13
+- Python Buildpack: v1.7.8
+- PHP Buildpack: v4.4.8
+- Staticfile Buildpack: v1.5.4
+- Binary Buildpack: v1.0.36
+- .Net Core Buildpack: v2.3.6
+- NGINX Buildpack: v1.1.6
+- R Buildpack: v1.1.1
+- Apt Buildpack: v0.2.2
+
+
 ## <a id='2.9.x'></a> 2.9.x
 
 Release date: 24.02.2020
@@ -80,7 +122,7 @@ Release date: 12.12.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v12.15.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v12.15.0)) with
-Diego version v2.40.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.40.0)) and Capi version v1.88.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.88.0)). 
+Diego version v2.40.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.40.0)) and Capi version v1.88.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.88.0)).
 
 
 #### Buildpacks (stacks: cflinuxfs3)
@@ -114,7 +156,7 @@ Release date: 20.11.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v12.9.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v12.9.0)) with
-Diego version v2.40.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.40.0)) and Capi version v1.88.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.88.0)). 
+Diego version v2.40.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.40.0)) and Capi version v1.88.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.88.0)).
 
 
 #### Buildpacks (stacks: cflinuxfs3)
@@ -156,7 +198,7 @@ Release date: 07.10.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v12.0.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v12.0.0)) with
-Diego version v2.37.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.37.0)) and Capi version v1.86.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.86.0)). 
+Diego version v2.37.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.37.0)) and Capi version v1.86.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.86.0)).
 
 
 #### Buildpacks (stacks: cflinuxfs3)
@@ -182,9 +224,9 @@ Release date: 29.08.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v11.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v11.2.0)) with
-Diego version v2.36.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.36.0)) and Capi version v1.86.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.86.0)). 
+Diego version v2.36.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.36.0)) and Capi version v1.86.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.86.0)).
 
-Component releases which are divergent to cf-deployment v11.2.0: 
+Component releases which are divergent to cf-deployment v11.2.0:
 - newer version of uaa (to fix CVE's).
 
 
@@ -210,7 +252,7 @@ Release date: 19.08.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v11.0.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v11.0.0)) with
-Diego version v2.35.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.35.0)) and Capi version v1.84.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.84.0)). 
+Diego version v2.35.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.35.0)) and Capi version v1.84.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.84.0)).
 
 #### Buildpacks (stacks: cflinuxfs3)
 
@@ -234,9 +276,9 @@ Release date: 29.07.2019/06.08.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v9.5.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v9.5.0)) with
-Diego version v2.34.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.34.0)) and Capi version v1.83.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.83.0)). 
+Diego version v2.34.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.34.0)) and Capi version v1.83.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.83.0)).
 
-Component releases which are divergent to cf-deployment v9.5.0: 
+Component releases which are divergent to cf-deployment v9.5.0:
 - newer versions of garden-runc and bpm (to fix a CVE).
 
 #### Buildpacks (stacks: cflinuxfs3)
@@ -261,13 +303,13 @@ Release date: 25.06.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v9.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v9.2.0)) with
-Diego version v2.31.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.31.0)) and Capi version v1.81.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.81.0)). 
+Diego version v2.31.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.31.0)) and Capi version v1.81.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.81.0)).
 
 #### Buildpacks (stacks: cflinuxfs3)
 
 Only the Linux cflinuxfs3 stack(ubuntu 18.08) is available and supported now.
-We removed an old java version 3 buildpack from our system. 
-If this old java version is still needed you can do so by pointing to github in the manifest.yml or 
+We removed an old java version 3 buildpack from our system.
+If this old java version is still needed you can do so by pointing to github in the manifest.yml or
 by `cf push -b https://github.com/cloudfoundry/java-buildpack#v3.19.2` (released 24/10/2017).
 
 
@@ -292,12 +334,12 @@ Release date: 01.05.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v7.11.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v7.11.0)) with
-Diego version v2.30.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.30.0)) and Capi version v1.78.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.78.0)). 
+Diego version v2.30.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.30.0)) and Capi version v1.78.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.78.0)).
 
 #### Buildpacks (stacks: cflinuxfs3/cflinuxfs2)
 
 The Linux cflinuxfs3 stack(ubuntu 18.08) is default. Stack cflinuxfs2 (ubuntu 14.04) is still supported until the end of May 2019.
-Linux-based apps newly pushed without an explicit flag specifying the cflinuxfs2 stack will now be staged on cflinuxfs3. 
+Linux-based apps newly pushed without an explicit flag specifying the cflinuxfs2 stack will now be staged on cflinuxfs3.
 
 - Java Buildpack: v4.19.0 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
 - Ruby Buildpack: v1.7.36
@@ -320,12 +362,12 @@ Release date: 12.02.2019
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v7.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v7.2.0)) with
-Diego version v2.27.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.27.0)) and Capi version v1.74.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.74.0)). 
+Diego version v2.27.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.27.0)) and Capi version v1.74.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.74.0)).
 
 #### Buildpacks (stacks: cflinuxfs3/cflinuxfs2)
 
 The Linux cflinuxfs3 stack(ubuntu 18.08) is now set as default. Stack cflinuxfs2 (ubuntu 14.04) is still supported.
-Linux-based apps pushed without an explicit flag specifying the cflinuxfs2 stack will now be staged on cflinuxfs3. 
+Linux-based apps pushed without an explicit flag specifying the cflinuxfs2 stack will now be staged on cflinuxfs3.
 
 - Java Buildpack: v4.17.2 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
 - Ruby Buildpack: v1.7.31
@@ -348,14 +390,14 @@ Release date: 26.11.2018
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v6.2.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v6.2.0)) with
-Diego version v2.22.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.22.0)) and Capi version v1.72.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.72.0)). 
+Diego version v2.22.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.22.0)) and Capi version v1.72.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.72.0)).
 
 #### Buildpacks (stacks: cflinuxfs2/cflinuxfs3)
 
-Since cf-depoyment 6.0.0 the new stack cflinuxfs3 (ubuntu 18.08) is supported additionally to the 
+Since cf-depoyment 6.0.0 the new stack cflinuxfs3 (ubuntu 18.08) is supported additionally to the
 stack cflinuxfs2 (ubuntu 14.04) which is still set as the default stack.
-Linux-based apps pushed without an explicit flag specifying the cflinuxfs3 stack will continue 
-to be staged on cflinuxfs2 as before. 
+Linux-based apps pushed without an explicit flag specifying the cflinuxfs3 stack will continue
+to be staged on cflinuxfs2 as before.
 
 - Java Buildpack: v4.16.1 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
 - Ruby Buildpack: v1.7.26
@@ -376,7 +418,7 @@ Release date: 29.10.2018
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v5.3.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v5.3.0)) with
-Diego version v2.19.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.19.0)) and Capi version v1.70.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.70.0)). 
+Diego version v2.19.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.19.0)) and Capi version v1.70.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.70.0)).
 
 
 #### Buildpacks
@@ -400,7 +442,7 @@ Release date: 21.09.2018
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v4.5.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v4.5.0)) with
-Diego version v2.17.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.17.0)) and Capi version v1.69.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.69.0)) . 
+Diego version v2.17.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.17.0)) and Capi version v1.69.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.69.0)) .
 
 
 #### Buildpacks
@@ -434,7 +476,7 @@ Release date: 28.08.2018
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v3.4.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v3.4.0)) with
-Diego version v2.16.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.16.0)) and Capi version v1.66.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.66.0)) . 
+Diego version v2.16.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.16.0)) and Capi version v1.66.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.66.0)) .
 
 
 #### Buildpacks
@@ -457,7 +499,7 @@ Release date: 29.06.2018
 
 ### Cloud Foundry Core
 
-Cloud Foundry cf-deployment v1.40.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.40.0)) with Diego version 2.8.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.8.0)). 
+Cloud Foundry cf-deployment v1.40.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.40.0)) with Diego version 2.8.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.8.0)).
 
 
 #### Buildpacks
@@ -481,7 +523,7 @@ Release date: 27.04.2018
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v1.27.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.27.0)) with Diego version 2.4.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.4.0)).
-Differing components: garden-runC 1.13.1, PHP buildpack 4.3.53 
+Differing components: garden-runC 1.13.1, PHP buildpack 4.3.53
 
 
 #### Buildpacks
@@ -501,9 +543,9 @@ Differing components: garden-runC 1.13.1, PHP buildpack 4.3.53
 ## <a id='1.4.0'></a> 1.4.0
 
 Release date: 26.03.2018/30.03.2018
-Notes: 
+Notes:
 Meanwhile we changed from "cf-release" to "cf-deployment" as it is the new supported way to deploy cloudfoundry.
-Therefore we set our APC versioning back and started from 1.x.x. 
+Therefore we set our APC versioning back and started from 1.x.x.
 
 
 ### Cloud Foundry Core
