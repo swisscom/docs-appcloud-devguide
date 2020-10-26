@@ -13,6 +13,13 @@ Release date: 26.10.2020
 Cloud Foundry cf-deployment v13.20.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v13.20.0)) with
 Diego version v2.48.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.48.0)) and Capi version v1.98.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.98.0)).
 
+#### Remark: Rate Limit for the Cloud Controller API
+As part of this release, rate limits are now configured on the Cloud Controller API. The affected endpoints are listed below.
+- Application Summary - (/v2/apps/<app_guid>/summary)
+- Application Statistics - (/v2/apps/<guid>/stats, /v3/processes/<app_guid>/stats)
+When requests exceed the rate limit value, the Cloud Controller API returns a `429: Too Many Requests` error code.
+
+
 #### Buildpacks (stacks: cflinuxfs3)
 
 - Java Buildpack: v4.32.1 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))
