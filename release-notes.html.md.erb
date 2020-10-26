@@ -15,8 +15,10 @@ Diego version v2.48.0 ([release notes](https://github.com/cloudfoundry/diego-rel
 
 #### Remark: Rate Limit for the Cloud Controller API
 As part of this release, rate limits are now configured on the Cloud Controller API. The affected endpoints are listed below.
+
 - Application Summary - (/v2/apps/<app_guid>/summary)
 - Application Statistics - (/v2/apps/<guid>/stats, /v3/processes/<app_guid>/stats)
+  
 When requests exceed the rate limit value, the Cloud Controller API returns a `429: Too Many Requests` error code.
 
 
