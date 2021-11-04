@@ -4,6 +4,36 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='2.30.x'></a> 2.30.x
+
+Release date: 04.11.2021
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v16.25.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v16.25.0)) with
+Diego version v2.53.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.53.0)) and Capi version v1.119.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.119.0)).
+
+#### Buildpacks (stacks: cflinuxfs3)
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.43 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.8.48                 #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.9.37                   #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.7.63              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.7.47               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.4.49                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.5.26           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.0.40               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.3.36            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.1.32                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.1.24                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.2.8                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+#### .Net Core Buildpack
+Support for dotnet 2.1.x has been dropped since the release [v2.3.35](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v2.3.35). Please migrate your .NET Core apps to supported versions.
+
+
+
 ## <a id='2.29.x'></a> 2.29.x
 
 Release date: 22.10.2021
