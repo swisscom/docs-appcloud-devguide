@@ -43,6 +43,8 @@ Release date: 22.10.2021
 Cloud Foundry cf-deployment v16.24.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v16.24.0)) with
 Diego version v2.53.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.53.0)) and Capi version v1.119.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.119.0)).
 
+Please be aware that the log output format for "RTR" logs has changed slightly and you should update your grok patterns if you are using [Logstash-Docker](https://docs.developer.swisscom.com/service-offerings/logstash-docker.html) to ingest these logs.
+
 #### Buildpacks (stacks: cflinuxfs3)
 For more information on the supported packages within the buildpack please check the release notes.
 
