@@ -14,8 +14,10 @@ Cloud Foundry cf-deployment v16.25.0 ([release notes](https://github.com/cloudfo
 Diego version v2.53.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.53.0)) and Capi version v1.119.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.119.0)).
 
 Information update: 25.11.2021
+
 After relasing this cloud-release it was detected that a limitation of max 1024 concurrent connections to the backend containers was introduced with 
 cloud-release 2.29.x and with diego v2.53.0 already.
+
 A new 2.30.x hotfix cloud-release uses diego v.2.54.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.54.0)) and solves this concourrent connections limitation (greater than 1024).
 
 
@@ -52,8 +54,10 @@ Diego version v2.53.0 ([release notes](https://github.com/cloudfoundry/diego-rel
 Please be aware that the log output format for "RTR" logs has changed slightly and you should update your grok patterns if you are using [Logstash-Docker](https://docs.developer.swisscom.com/service-offerings/logstash-docker.html) to ingest these logs.
 
 Information update: 25.11.2021
+
 It was detected that a limitation of max 1024 concurrent connections to the backend containers was introduced with 
 cloud-release 2.29.x and with diego v2.53.0.
+
 The latest 2.29.x hotfix cloud-release uses diego v.2.54.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.54.0)) and solves this concourrent connections limitation (greater than 1024).
 
 
