@@ -4,6 +4,39 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='2.32.x'></a> 2.32.x
+
+Release date: 17.01.2022
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v17.1.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v17.1.0)) with
+Diego version v2.55.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.55.0)) and (deviating) Capi version v1.120.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.120.0)).
+
+Component releases which are divergent to cf-deployment v17.1.0: 
+- Using previous version of capi 1.120.0 referred on previous cf-deployment 17.0.0 
+
+#### Buildpacks (stacks: cflinuxfs3)
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.47 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.8.49                 #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.9.38                   #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.7.66              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.7.49               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.4.54                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.5.28           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.0.42               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.3.37            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.1.34                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.1.25                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.2.10                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+#### .Net Core Buildpack
+Support for dotnet 2.1.x has been dropped since the release [v2.3.35](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v2.3.35). Please migrate your .NET Core apps to supported versions.
+
+
+
 ## <a id='2.31.x'></a> 2.31.x
 
 Release date: 20.12.2021
