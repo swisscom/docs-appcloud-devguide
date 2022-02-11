@@ -14,10 +14,14 @@ Cloud Foundry cf-deployment v17.1.0 ([release notes](https://github.com/cloudfou
 Diego version v2.55.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.55.0)) and (deviating) Capi version v1.120.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.120.0)).
 
 Component releases which are divergent to cf-deployment v17.1.0: 
+
 - Using previous version of capi 1.120.0 referred on previous cf-deployment 17.0.0 
 
+
 Known Issues:
-Update 11.02.2022: 
+
+Update 11.02.2022:
+
 Version 2.32.x of our platform release contains a known issue that can cause application traces to break.
 Gorouter sets an invalid X-B3-SpanID header.
 An issue with the Gorouter’s implementation of X-B3-SpanId and X-B3-TraceId headers can cause invalid span IDs 
