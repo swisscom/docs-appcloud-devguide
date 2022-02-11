@@ -16,6 +16,16 @@ Diego version v2.55.0 ([release notes](https://github.com/cloudfoundry/diego-rel
 Component releases which are divergent to cf-deployment v17.1.0: 
 - Using previous version of capi 1.120.0 referred on previous cf-deployment 17.0.0 
 
+Known Issues:
+Update 11.02.2022: 
+Version 2.32.x of our platform release contains a known issue that can cause application traces to break.
+Gorouter sets an invalid X-B3-SpanID header.
+An issue with the Gorouter’s implementation of X-B3-SpanId and X-B3-TraceId headers can cause invalid span IDs 
+to be set after updating the X-B3-TraceId header to the new 16-byte standard. 
+As a result, some applications and libraries invalidate the X-B3-SpanId value, breaking traces of the application.
+This issue introduced with routing-release v0.227.0 and v0.228.0 is used on our platform release 2.32.x.
+
+
 #### Buildpacks (stacks: cflinuxfs3)
 For more information on the supported packages within the buildpack please check the release notes.
 
