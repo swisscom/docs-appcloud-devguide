@@ -4,6 +4,51 @@ title: APC Release Notes
 
 <strong><%= modified_date %></strong>
 
+## <a id='2.35.x'></a> 2.35.x
+
+Release date: 06.04.2022
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v17.1.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v17.1.0)) with
+Diego version v2.55.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.55.0)) and Capi version v1.123.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.123.0)).
+
+#### Component releases which are divergent to cf-deployment v17.1.0:
+- routing-release 0.229.0 ([release notes](https://github.com/cloudfoundry/routing-release/releases/tag/0.229.0))
+- uaa 75.18.0 ([release notes](https://github.com/cloudfoundry/uaa/releases/tag/75.18.0))
+- credhub 2.12.2 ([release notes](https://github.com/pivotal/credhub-release/releases/tag/2.12.2))
+
+#### Known Issues / Fixed Issues:
+Version 2.35.x of our platform release contains a newer routing release 0.229.0 which fixes the issue where the b3_spanid header was incorrectly being set.
+
+### Security
+Version 2.35.x of our platform release contains a newer UAA release which addresses CVE-2022-22965 (Spring4Shell).
+
+#### Additional changes to mention:
+- routing release 0.229.0 ([release notes](https://github.com/cloudfoundry/routing-release/releases/tag/0.229.0))
+
+  Query parameters with non-percent-encoded semi-colons (https://app.example.com/endpoint?param1;param2) will no longer be parsed.  
+  Please see the changelog on the provided link above for more details on the routing-release 0.229.0.
+
+
+#### Buildpacks (stacks: cflinuxfs3)
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.48.2 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.8.52                 #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.9.41                   #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.7.67              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.7.52               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.4.58                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.5.29           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.0.42               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.3.40            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.1.36                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.1.27                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.2.10                  #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+
+
 ## <a id='2.34.x'></a> 2.34.x
 
 Release date: 09.03.2022
