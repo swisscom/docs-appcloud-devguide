@@ -12,13 +12,13 @@ Cloud Foundry cf-deployment v21.2.0 ([release notes](https://github.com/cloudfou
 Diego version v2.64.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.64.0)) and Capi version v1.129.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.129.0)).
 
 #### Component releases which are divergent to cf-deployment v21.2.0:
-Newer and incudes a fix for the Dynamic ASG feature:<br>
+Newer and incudes a fix for the Dynamic ASG feature:
 - cf-networking 3.8.0 ([release notes](https://github.com/cloudfoundry/cf-networking-release/releases/tag/3.8.0))
 - silk 3.8.0 ([release notes](https://github.com/cloudfoundry/silk-release/releases/tag/3.8.0))
 
 #### Additional changes to mention:
 Dynamic ASGs<br>
-With this platform relase and since cf-deployment v20.0.0 the "dynamic" ASG (Application Security Group) feature is enabled by default.<br>
+Since cf-deployment v20.0.0 and with this platform release the "dynamic" ASG (Application Security Group) feature is enabled by default.
 With this it is no longer necessary to restart the affected application after changing an ASG rule (understood as "connectivity egress rules").<br>
 You can read more here: https://github.com/cloudfoundry/cf-networking-release/blob/develop/docs/dynamic-asg-overview.md
 
