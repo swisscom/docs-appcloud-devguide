@@ -9,7 +9,12 @@ Release date: 12.09.2022
 ### Cloud Foundry Core
 
 Cloud Foundry cf-deployment v21.8.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v21.8.0)) with
-Diego version v2.65.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.65.0)) and Capi version v1.135.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.135.0)).
+Diego version v2.65.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.65.0)) and Capi version v1.136.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.136.0)).
+
+#### Additional changes to mention:
+Dynamic ASGs<br>
+With this platform release the "dynamic" ASG (Application Security Group) feature is disabled.
+Applications restart/restage is needed to apply the ASG (Application Security Group) as it was done in the past.
 
 #### Buildpacks (stacks: cflinuxfs3)
 For more information on the supported packages within the buildpack please check the release notes.
