@@ -14,6 +14,19 @@ Diego version v2.70.0 ([release notes](https://github.com/cloudfoundry/diego-rel
 #### Component releases which are divergent to cf-deployment v24.1.0:
 - Includes previous capi version v1.139.0 instead of v1.142.0 which would include a regression.
 
+
+#### Additional changes to mention:
+
+**Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes. 
+
+ - **Ruby buildpack:** v1.8.61 will be the last Ruby buildpack which defaults to use Ruby version 2.7.x and will be rolled out with this platform release version 2.44.x. 
+Newer platform releases (>=2.45.x) will offer Ruby buildpack v1.9.0 or newer, which defaults to using Ruby version 3.x.
+Ruby v3.x includes some major differences which could lead to your app being not able to stage or compile anymore. 
+   
+   **Please take care to properly test all your Ruby applications with the latest buildpack and Ruby v3.x in advance!**  
+   Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future  (likely April 2023 due to its EOL).
+
+
 #### Buildpacks (stacks: cflinuxfs3)
 For more information on the supported packages within the buildpack please check the release notes.
 
