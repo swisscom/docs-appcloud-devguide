@@ -12,17 +12,17 @@ Cloud Foundry cf-deployment v25.1.0 ([release notes](https://github.com/cloudfou
 Diego version v2.71.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.71.0)) and Capi version v1.143.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.143.0)).
 
 #### cflinuxfs4 support added
-- This platform release adds support for cflinuxfs4 stack. We advise users to test the new stack for the upcoming switch from cflinuxfs3 to cflinuxfs4 (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html).
+- This platform release adds support for the cflinuxfs4 stack. We advise users to test the new stack for the upcoming switch from cflinuxfs3 to cflinuxfs4. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
 
 
 #### Additional changes to mention:
 
 **Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes.
 
- - **Ruby buildpack:** With this platform release we offer Ruby buildpack v1.9.1, which defaults to using Ruby version 3.x.
+ - **Ruby buildpack:** With this platform release we offer Ruby buildpack v1.9.1, which defaults to using Ruby version v3.x.
  Ruby v3.x includes some major differences which could lead to your app being not able to stage or compile anymore.
 
-   ***Note:***Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future  (likely April 2023 due to its EOL).
+   **Note:** Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future  (likely April 2023 due to its EOL).
 
 
 #### Buildpacks (stacks: cflinuxfs3)
