@@ -2,6 +2,58 @@
 title: APC Release Notes
 ---
 
+## <a id='2.46.x'></a> 2.46.x
+
+Release date: 01.03.2023
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v26.3.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v26.3.0)) with
+Diego version v2.71.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.71.0)) and Capi version v1.144.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.144.0)).
+
+#### cflinuxfs4 support added
+- This platform release adds support for the cflinuxfs4 stack. We advise users to test the new stack for the upcoming switch from cflinuxfs3 to cflinuxfs4. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
+
+
+#### Additional changes to mention:
+
+**Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes.
+
+ - **Ruby buildpack:** With this platform release we offer Ruby buildpack v1.9.2, which defaults to using Ruby version v3.x.
+ Ruby v3.x includes some major differences which could lead to your app being not able to stage or compile anymore.
+
+   **Note:** Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future  (likely April 2023 due to its EOL).
+
+
+#### Buildpacks (stacks: cflinuxfs3)
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.54 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.9.2                  #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.10.5                   #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.8.6               #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.8.7                #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.5.1                   #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.5.39           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.1.2                #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.4.8             #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.2.0                 #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.2.0                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.2.14                  #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+#### Buildpacks (stacks: cflinuxfs4)
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.54 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.9.2                  #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.10.5                   #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.8.6               #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.8.7                #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- Binary Buildpack: v1.1.2                #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.4.8             #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.2.0                 #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.2.0                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+
 ## <a id='2.45.x'></a> 2.45.x
 
 Release date: 05.02.2023
