@@ -14,6 +14,8 @@ Diego version v2.71.0 ([release notes](https://github.com/cloudfoundry/diego-rel
 #### cflinuxfs4 support added
 - This platform release adds support for the cflinuxfs4 stack. We advise users to test the new stack for the upcoming switch from cflinuxfs3 to cflinuxfs4. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
 
+#### Java & PHP buildpack-based applications
+- Please be advised that in one of the upcoming platform releases cflinuxfs4 version >1.x will be introduced. This release removes Python and Ruby from the stack which was previously needed for the Java and PHP buildpack. PHP buildpack releases v4.6.0 or higher and Java buildpack releases v4.55 or higher are supported on this new cflinuxfs4 stack version.
 
 #### Additional changes to mention:
 
@@ -22,7 +24,7 @@ Diego version v2.71.0 ([release notes](https://github.com/cloudfoundry/diego-rel
  - **Ruby buildpack:** With this platform release we offer Ruby buildpack v1.9.2, which defaults to using Ruby version v3.x.
  Ruby v3.x includes some major differences which could lead to your app being not able to stage or compile anymore.
 
-   **Note:** Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future  (likely April 2023 due to its EOL).
+   **Note:** Ruby buildpacks still support the use of Ruby v2.7.x for the moment, until it is finally removed from the buildpack. Its removal is expected sometime in the near future (likely April 2023 due to its EOL).
 
 
 #### Buildpacks (stacks: cflinuxfs3)
