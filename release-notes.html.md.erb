@@ -2,12 +2,48 @@
 title: APC Release Notes
 ---
 
+## <a id='3.16.x'></a> 3.16.x
+
+Release date: 24.09.2024
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v43.3.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v43.3.0)) with
+Diego version v2.102.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.102.0)) and Capi version v1.191.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.191.0)).
+
+#### Component releases which are divergent to cf-deployment v43.3.0:
+- The routing release 0.304.0 is used instead 0.310.0.
+
+#### cflinuxfs4
+- We advise users to migrate to the new stack for the upcoming removal of cflinuxfs3. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
+
+**Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes.
+
+#### Buildpacks
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.71.0 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.10.18                #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.10.23                  #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.8.29              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.8.29               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.6.23                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.6.17           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.1.14               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.4.33            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.2.19                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.2.15                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.3.5                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+
+
 ## <a id='3.15.x'></a> 3.15.x
 
 Release date: 19.08.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.14.x'></a> 3.14.x
@@ -41,12 +77,14 @@ For more information on the supported packages within the buildpack please check
 - Apt Buildpack: v0.3.5                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
 
 
+
 ## <a id='3.13.x'></a> 3.13.x
 
 Release date: 20.06.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.12.x'></a> 3.12.x
@@ -100,12 +138,14 @@ For more information on the supported packages within the buildpack please check
 - Apt Buildpack: v0.3.5                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
 
 
+
 ## <a id='3.11.x'></a> 3.11.x
 
 Release date: 11.04.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.10.x'></a> 3.10.x
@@ -156,12 +196,14 @@ For more information on the supported packages within the buildpack please check
 - Apt Buildpack: v0.3.5                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
 
 
+
 ## <a id='3.9.x'></a> 3.9.x
 
 Release date: 15.02.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.8.x'></a> 3.8.x
@@ -212,12 +254,14 @@ For more information on the supported packages within the buildpack please check
 - Apt Buildpack: v0.3.4                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
 
 
+
 ## <a id='3.7.x'></a> 3.7.x
 
 Release date: 20.12.2023
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.6.x'></a> 3.6.x
