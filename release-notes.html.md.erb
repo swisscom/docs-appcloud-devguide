@@ -1,12 +1,55 @@
 ---
 title: APC Release Notes
 ---
+## <a id='3.20.x'></a> 3.20.x
+
+Release date: 20.01.2025
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v46.5.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v46.5.0)) with
+Diego version v2.107.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.107.0)) and Capi version v1.200.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.200.0)).
+
+#### Component releases which are divergent to cf-deployment v46.5.0:
+- The diego release v2.107.0 is in use instead of v2.112.0 (diego version v2.109.0 - v2.112.0 with issues on platforms which supports multiple stacks, like we do with cflinuxfs3 and cfliunxfs4).<br> 
+  If newer upcoming diego rleases will not solve this situation, then we will have to drop the support of the cflinuxfs3 stack on our platforms.<br> 
+  Notes about the removal of the cflinuxfs3 stack has been announced since mid of 2023 (see paragraph "cflinuxfs4" further below also).<br>
+  
+
+#### Additional changes to mention:
+- Gorouter will now properly emit standardised RFC5424 syslog messages instead of BSD-style (RFC3164) syslog messages.<br>
+
+#### cflinuxfs4
+- We advise users to migrate to the new stack for the upcoming removal of cflinuxfs3. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
+
+**Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes.
+
+#### Buildpacks
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.74.0 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.10.21                #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.10.26                  #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.8.32              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.8.32               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.6.26                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.6.21           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.1.15               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.4.37            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.2.22                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.2.17                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.3.6                   #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
+
+
 ## <a id='3.19.x'></a> 3.19.x
 
 Release date: 23.12.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
+
 
 ## <a id='3.18.x'></a> 3.18.x
 
@@ -54,6 +97,7 @@ Release date: 23.10.2024
 
 #### OS update only
 This platform release is based on the previous release and contains an OS (stemcell) update only.
+
 
 
 ## <a id='3.16.x'></a> 3.16.x
