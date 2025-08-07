@@ -2,6 +2,41 @@
 title: APC Release Notes
 ---
 
+## <a id='3.26.x'></a> 3.26.x
+
+Release date: 07.08.2025
+
+### Cloud Foundry Core
+
+Cloud Foundry cf-deployment v50.1.0 ([release notes](https://github.com/cloudfoundry/cf-deployment/releases/tag/v50.1.0)) with
+Diego version v2.118.0 ([release notes](https://github.com/cloudfoundry/diego-release/releases/tag/v2.118.0)) and Capi version v1.211.0 ([release notes](https://github.com/cloudfoundry/capi-release/releases/tag/1.211.0)).
+
+#### Additional changes to mention:
+- Since diego v2.115.0 the previous incompatible changes on supporting multiple stacks has been solved. With that, for the sidecar containers a default stack (cflinuxfs4) has been set platform wide.<br>
+
+#### cflinuxfs4
+- We advise users to migrate to the new stack for the upcoming removal of cflinuxfs3. (https://docs.developer.swisscom.com/devguide/deploy-apps/stacks.html)
+
+**Attention:** We advise users to always read the buildpack release notes carefully for upcoming changes.
+
+#### Buildpacks
+The listed system buildpacks are buildpacks versions which are compatible with the cflinuxfs4 stack.<br>
+**It is possible that the listed buildpack version is not compatible with the deprecated cflinuxfs3 stack and is not mentioned here.**<br>
+For more information on the supported packages within the buildpack please check the release notes.
+
+- Java Buildpack: v4.77.0 #([see Caveats](https://docs.developer.swisscom.com/devguide-sc/buildpacks/java/caveats.html))   #[java buildpack releases](https://github.com/cloudfoundry/java-buildpack/releases)<br>
+- Ruby Buildpack: v1.10.25                #[ruby buildpack releases](https://github.com/cloudfoundry/ruby-buildpack/releases)<br>
+- Go Buildpack: v1.10.38                  #[go buildpack releases](https://github.com/cloudfoundry/go-buildpack/releases)<br>
+- Node.js Buildpack: v1.8.39              #[nodejs buildpack releases](https://github.com/cloudfoundry/nodejs-buildpack/releases)<br>
+- Python Buildpack: v1.8.38               #[python buildpack releases](https://github.com/cloudfoundry/python-buildpack/releases)<br>
+- PHP Buildpack: v4.6.28                  #[php buildpack releases](https://github.com/cloudfoundry/php-buildpack/releases)<br>
+- Staticfile Buildpack: v1.6.30           #[staticfile buildpack releases](https://github.com/cloudfoundry/staticfile-buildpack/releases)<br>
+- Binary Buildpack: v1.1.21               #[binary buildpack releases](https://github.com/cloudfoundry/binary-buildpack/releases)<br>
+- .Net Core Buildpack: v2.4.43            #[dotnet-core buildpack releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases)<br>
+- NGINX Buildpack: v1.2.28                #[nginx buildpack releases](https://github.com/cloudfoundry/nginx-buildpack/releases)<br>
+- R Buildpack: v1.2.22                    #[r buildpack releases](https://github.com/cloudfoundry/r-buildpack/releases)<br>
+- Apt Buildpack: v0.3.10                  #[apt buildpack releases](https://github.com/cloudfoundry/apt-buildpack/releases)<br>
+
 ## <a id='3.25.x'></a> 3.25.x
 
 Release date: 01.07.2025
